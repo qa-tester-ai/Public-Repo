@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5ef">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">A small project for everyday tasks</p>
+          <h1>Task Manager</h1>
+        </div>
+        <p class="storage-note"><span class="status-dot" aria-hidden="true"></span>Saved in this browser</p>
+      </header>
+
+      <section class="task-panel" aria-labelledby="list-heading">
+        <form class="task-form" id="task-form">
+          <label class="visually-hidden" for="task-input">New task</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="120"
+            placeholder="What needs to get done?"
+            autocomplete="off"
+            required
+          >
+          <button class="add-button" type="submit">Add task <span aria-hidden="true">+</span></button>
+        </form>
+
+        <div class="list-toolbar">
+          <div>
+            <h2 id="list-heading">Your tasks</h2>
+            <p class="task-count" id="task-count" aria-live="polite">0 tasks remaining</p>
+          </div>
+          <button class="text-button clear-button" id="clear-completed" type="button" disabled>
+            Clear completed
+          </button>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter tasks">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+      </section>
+
+      <footer class="page-footer">A simple task list. No account, server, or setup required.</footer>
+    </main>
+  </body>
+</html>

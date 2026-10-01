@@ -18,6 +18,7 @@ function loadTasks() {
     return Array.isArray(savedTasks) ? savedTasks : [];
   } catch {
     return [];
+    
   }
 }
 
